@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Document signed
+{% endblock %}
+
+{% block main %}
+
+    <div class="m-5">
+        <h6>The Document has been signed, you can download it by clicking the button below.</h6>
+    </div>
+    <button class="btn btn-primary m-3" onclick="window.open('/static/{{ filename }}', '_blank', 'width=800,height=600')">Download the signed document</button>
+
+{% endblock %}

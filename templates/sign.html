@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+    <h4 class="mb-5">You can sign a pdf document by filling out this form.</h4>
+    <form action="/sign" method="POST" enctype="multipart/form-data">
+        <div class="m-5">
+            <h4 class="m-3">Type of document</h4>
+            <select name="doctype" required>
+                <option value="barauslagen">Vergütung von Barauslagen</option>
+            </select>
+        </div>
+        <div class="m-5">
+            <h4 class="m-3">Signature to use</h4>
+            <select name="signature" required>
+                <option value="csongor">Gaal Csongor</option>
+                <option value="john">John Doe</option>
+            </select>
+        </div>
+        <div class="m-5">
+            <h4 class="m-3">File upload</h4>
+            <label for="file_upload"></label>
+            <input type="file" id="file_upload" name="file_upload" required>
+        </div>
+        <button class="btn btn-primary m-5" type="submit">Sign the document</button>
+    </form>
+
+
+{% endblock %}

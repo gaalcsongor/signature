@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Download earlier Documents
+{% endblock %}
+
+{% block main %}
+    <h4 class="mb-5">You can download a specific document which you have signed earlier.</h4>
+    <form action="/download" method="post">
+        <div class="m-5">
+            <h5 class="m-3">Select document</h5>
+            <select name="document" required>
+                {% for file in files %}
+                <option value={{ file.file_name }}>{{ file.file_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="m-5">
+            <button class="btn btn-primary" type="submit">Download document</button>
+        </div>
+    </form>
+
+{% endblock %}
